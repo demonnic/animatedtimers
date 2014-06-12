@@ -46,7 +46,7 @@ restarts "myTimer" if there is any time left on it, and if so shows it on the sc
 ###demonnic.anitimer:pause("myTimer") 
 stops "myTimer" but leaves it visible on the screen
 
-###demonnic.anitimer:destory("myTimer")
+###demonnic.anitimer:destroy("myTimer")
 stops "myTimer", removes it from the screen, and then nils out the timer, removing it from tracking. Use this is you want a timer to really go away and not be brought back by startAll()
 
 ###demonnic.anitimer:startAll()
