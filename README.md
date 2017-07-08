@@ -1,16 +1,16 @@
-animatedtimers
-==============
+# Animated timers for Mudlet, using the Geyser framework.
+## To install latest version
+```
+lua local a="https://raw.githubusercontent.com/demonnic/animatedtimers/master/animatedtimers-3.1.xml"function d(b,c)if not c:find("AnimatedTimers",1,true)then return end installPackage(c)os.remove(c)cecho("<lime_green>Package installed!\n")end registerAnonymousEventHandler("sysDownloadDone","d")downloadFile(getMudletHomeDir()..(a:ends("xml")and"/AnimatedTimers.xml"or"/AnimatedTimers.zip"),a)
+```
 
-Animated timers for Mudlet, using the geyser framework.
-
-CHANGELOG
-2.0 - added :stop(name) function. Also, when a timer expires or is stopped it will stop the stop watch. Added argument for whether to display the time on the timer or not.
-2.1 - Added option to provide a caption for the timer, such that the text appears after the time (if showTime is true) or just as the text on the gauge (if showTime is false)
-2.2 - Added :pause(name), :start(name) functions to allow pausing and restarting of timers. The difference between pause and stop is that pause will leave the timer visible on the screen, and stop will hide it.
-3.0 - Added :pauseAll(), :stopAll(), :destroy(name), and :destroyAll() functions
+## CHANGELOG
+* 2.0 - added :stop(name) function. Also, when a timer expires or is stopped it will stop the stop watch. Added argument for whether to display the time on the timer or not.
+* 2.1 - Added option to provide a caption for the timer, such that the text appears after the time (if showTime is true) or just as the text on the gauge (if showTime is false)
+* 2.2 - Added :pause(name), :start(name) functions to allow pausing and restarting of timers. The difference between pause and stop is that pause will leave the timer visible on the screen, and stop will hide it.
+* 3.0 - Added :pauseAll(), :stopAll(), :destroy(name), and :destroyAll() functions
       Constructor has changed as well, in order to make facilitating future options easier
-
-3.1 - added hook option to options table. Set to either an already defined function or a string of lua code to execute. When the timer expires, the code or function will be executed. If not set, does nothing.
+* 3.1 - added hook option to options table. Set to either an already defined function or a string of lua code to execute. When the timer expires, the code or function will be executed. If not set, does nothing.
 
 ### demonnic.anitimer:new(name, constructor, time, tableOfOptions)
 This will create a new animated timer, named name. constructor should be a standard constructor for a Geyser.Gauge. time is the amount of time in seconds for the timer to run for. tableOfOptions has the following available options right now
@@ -18,7 +18,7 @@ This will create a new animated timer, named name. constructor should be a stand
 - timerCaption: string value. If you want some other text to show up on the timer, this is where you set it
 - cssFront: string value. This should be a qt stylesheet, as you might normally pass to a Mudlet Label
 - cssBack: string value. This should be a qt stylesheet, as you might normally pass to a Mudlet Label
-- hook: New in 3.1. string value or function. If you have a function you would execute as myHook(), set `hook = myHook`. If you instead wish to execute arbitrary lua code pass a string, such as `hook = [[echo("test successful")]]`
+- hook: New in 3.1. string value or function. If you have a function you would execute as `myHook()`, set `hook = myHook`. If you instead wish to execute arbitrary lua code pass a string, such as `hook = [[echo("test successful")]]`
 
 it should be noted that if you specify cssFront, then cssBack will be the same as cssFront, but it will have a "background-color: black;" constraint added to the stylesheet in order to try and ensure some contrast between the two. One example would be:
 ```
