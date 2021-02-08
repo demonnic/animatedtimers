@@ -1,3 +1,6 @@
+# animatedtimers is now maintained as TimerGauge, part of the [MDK](https://github.com/demonnic/MDK)
+
+
 # Animated timers for Mudlet, using the Geyser framework.
 ## To install latest version
 ```
